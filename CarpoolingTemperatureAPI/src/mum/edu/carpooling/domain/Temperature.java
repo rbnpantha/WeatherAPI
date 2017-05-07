@@ -11,6 +11,15 @@ package mum.edu.carpooling.domain;
  */
 public class Temperature {
     int temp;
+    int zipCode;
+
+    public int getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
+    }
 
     public int getTemp() {
         return temp;
