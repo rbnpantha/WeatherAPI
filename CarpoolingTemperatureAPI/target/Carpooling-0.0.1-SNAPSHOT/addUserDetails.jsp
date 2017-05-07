@@ -2,109 +2,119 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<title>User Details</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/js/userDetails.js"></script>
-</head>
-<body>
+    <head>
+        <title>User Details</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script
+        src="${pageContext.request.contextPath}/resources/js/userDetails.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
 
-	<div class="jumbotron text-left">
-		<h1>Welcome to Car Pooling Service</h1>
-	</div>
+        <div class="jumbotron text-left">
+            <h1>Welcome to Car Pooling Service</h1>
+        </div>
 
-	<form id="userForm" action="addUserDetails" method="post">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6">
-					<h3>Add User Information</h3>
-					<div class="form-horizontal">
-						<div class="form-group">
-							<label class="control-label col-lg-3" for="firstName">*Full
-								name:</label>
-							<div class="col-sm-7">
-								<input id="fullName" name="fullName" type="text" class="form-control" />
-								<div id="errorsFullName" style="display: none; color: red;"></div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-lg-3" for="gender">*Gender:</label>
-							<div class="col-sm-7">
-								<div class="btn dropdown-toggle">
-									<select id="gender" name="gender">
-										<option value="male" label="Male" />
-										<option value="female" label="Female" />
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-lg-3" for="email">*Email:</label>
-							<div class="col-sm-7">
-								<input class="form-control"
-									placeholder="eg.example@newyork.com" id="email" name="email" type="text"/>
-								<div id="errorsEmail" style="display: none; color: red;"></div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-lg-3" for="dob">DOB:</label>
-							<div class="col-sm-7">
-								<input class="form-control" placeholder="MM/DD/YYYY"
-									id="dob" name="dob" type="text"/>
-								<div id="errorsDob" style="display: none; color: red;"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<h3>Address</h3>
-					<div class="form-horizontal">
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="street">Street:</label>
-							<div class="col-sm-8">
-								<input class="form-control" id="street" name="street" type="text"/>
-								<div id="errorsStreet" style="display: none; color: red;"></div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="city">City:</label>
-							<div class="col-sm-8">
-								<input class="form-control" id="city" name="city" type="text"/>
-								<div id="errorsCity" style="display: none; color: red;"></div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="state">State:</label>
-							<div class="col-sm-8">
-								<input class="form-control" id="state" placeholder="Eg.IA (Must be 2 characters)" name="state" type="text"/>
-								<div id="errorsState" style="display: none; color: red;"></div>
-							</div>
-						</div> 
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="zipCode">ZipCode:</label>
-							<div class="col-sm-8">
-								<input class="form-control" id="zipCode" name="zipCode" type="text"/>
-								<div id="errorsZipCode" style="display: none; color: red;"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<label class="control-label col-sm-3" for="state"></label>
-					<div class="col-sm-8">
-						<input id="addUser" name="Save" type="submit"
-							class="btn btn-primary col-sm-3" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</form>
+        <form id="userForm" action="addUserDetails" method="post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3>Add User Information</h3>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-lg-3" for="firstName">*Full
+                                    name:</label>
+                                <div class="col-sm-7">
+                                    <input id="fullName" name="fullName" type="text" class="form-control" />
+                                    <div id="errorsFullName" style="display: none; color: red;"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-lg-3" for="gender">*Gender:</label>
+                                <div class="col-sm-7">
+                                    <div class="btn dropdown-toggle">
+                                        <select id="gender" name="gender">
+                                            <option value="male" label="Male" />
+                                            <option value="female" label="Female" />
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-lg-3" for="email">*Email:</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control"
+                                           placeholder="eg.example@newyork.com" id="email" name="email" type="text"/>
+                                    <div id="errorsEmail" style="display: none; color: red;"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-lg-3" for="dob">DOB:</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" placeholder="MM/DD/YYYY"
+                                           id="dob" name="dob" type="text"/>
+                                    <div id="errorsDob" style="display: none; color: red;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>Address</h3>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="street">Street:</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="street" name="street" type="text"/>
+                                    <div id="errorsStreet" style="display: none; color: red;"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="city">City:</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="city" name="city" type="text"/>
+                                    <div id="errorsCity" style="display: none; color: red;"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="state">State:</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="state" placeholder="Eg.IA (Must be 2 characters)" name="state" type="text"/>
+                                    <div id="errorsState" style="display: none; color: red;"></div>
+                                </div>
+                            </div> 
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="zipCode">ZipCode:</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="zipCode" name="zipCode" type="text"/>
+                                    <div id="errorsZipCode" style="display: none; color: red;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label col-sm-3" for="state"></label>
+                        <div class="col-sm-8">
+                            <input id="addUser" name="Save" type="submit"
+                                   class="btn btn-primary col-sm-3" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    <footer class="container-fluid text-center bg-lightgray">
+
+        <div class="copyrights" style="margin-top:25px; background-color:LightGray">
+            <p>RBN © 2017, All Rights Reserved
+                <br>
+                <span>Developed By: Rabin Pantha</span></p>
+            <p><a href="https://www.linkedin.com/in/rabinpantha" target="_blank">Linkedin <i class="fa fa-linkedin-square" aria-hidden="true"></i> </a></p>
+        </div>
+    </footer>
 </body>
 </html>

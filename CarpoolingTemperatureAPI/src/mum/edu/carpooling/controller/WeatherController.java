@@ -19,8 +19,9 @@ import mum.edu.carpooling.service.impl.UserServiceImpl;
  */
 @WebServlet("/WeatherController")
 public class WeatherController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+
+    private static final long serialVersionUID = 1L;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -29,35 +30,43 @@ public class WeatherController extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		doPost(request, response);
-	}
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        response.getWriter().append("Served at: ").append(request.getContextPath());
+        HttpSession session = request.getSession();
+        String userSession = (String) session.getAttribute("username");
+        if (null == userSession) {
+            forward(request, response, "login.jsp");
+        } else {
+            doPost(request, response);
+        }
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
-		HttpSession session = request.getSession();
-		UserService userService = new UserServiceImpl();
-		
-		String username = (String) session.getAttribute("username");
-		
-		User user = userService.findUserByUsername(username);
-		request.setAttribute("user", user);
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        //doGet(request, response);
+        HttpSession session = request.getSession();
+        UserService userService = new UserServiceImpl();
 
-		forward(request, response, "search_weather.jsp");
-	}
+        String username = (String) session.getAttribute("username");
 
-	private void forward(HttpServletRequest request, HttpServletResponse response, String pageName)
-			throws ServletException, IOException {
-		RequestDispatcher dispatch = request.getRequestDispatcher(pageName);
-		dispatch.forward(request, response);
-	}
+        User user = userService.findUserByUsername(username);
+        request.setAttribute("user", user);
+
+        forward(request, response, "search_weather.jsp");
+    }
+
+    private void forward(HttpServletRequest request, HttpServletResponse response, String pageName)
+            throws ServletException, IOException {
+        RequestDispatcher dispatch = request.getRequestDispatcher(pageName);
+        dispatch.forward(request, response);
+    }
 }

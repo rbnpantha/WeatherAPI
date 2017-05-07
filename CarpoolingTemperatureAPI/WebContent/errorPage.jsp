@@ -1,12 +1,8 @@
 <%-- 
-    Document   : temperature
-    Created on : May 5, 2017, 11:31:08 AM
+    Document   : errorPage
+    Created on : May 6, 2017, 11:47:51 PM
     Author     : Rabin
 --%>
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
     <head>
@@ -69,21 +65,9 @@
         <div class="jumbotron text-left">
             <h1>Welcome to Temperature Service</h1>
         </div>
-        <form action="TemperatureController" method="post">
-            <fieldset class="radiogroup"> 
-                <legend>Search Maximum Temperature by Zip Code</legend>
-                <div>
-                    <input type="text" name="txtSearch" id="txtSearch" required="true"/> 
-                    <input type="submit" name="btnSearchDes" value="Search" />
-                </div>
-                <ul class="radio"> 
-                    <li><input type="radio" name="crust" id="cityDes" value="cityDes" /><label for="cityDes">City Destination</label></li> 
-                    <li><input type="radio" name="crust" id="zipCodeDes" value="zipCodeDes" checked/><label for="zipCodeDes">Zip Code Destination</label></li> 
-                    <li><input type="radio" name="crust" id="currentLocation" value="currentLocation" /><label for="currentLocation">Current Location</label></li> 
-                </ul> 
-            </fieldset>		
-        </form>
-        <div id="map-canvas"></div>
+        
+        <h2> Sorry ! Invalid Zip Code ! <a href="TemperatureController">Try Again!</a></h2>
+	
 
     <footer class="container-fluid text-center bg-lightgray">
 
