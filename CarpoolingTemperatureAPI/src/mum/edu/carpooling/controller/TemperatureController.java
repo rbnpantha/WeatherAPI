@@ -6,7 +6,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
 import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,14 +13,9 @@ import org.w3c.dom.NodeList;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Iterator;
 import javax.servlet.http.HttpSession;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -81,10 +75,6 @@ public class TemperatureController extends HttpServlet {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(conn.getInputStream());
-//            TransformerFactory tfactory = TransformerFactory.newInstance();
-//            Transformer xform = tfactory.newTransformer();
-//            File myOutput = new File("D:\\MUM_Project\\xmlHolder\\myOutput.xml");
-//            xform.transform(new DOMSource(doc), new StreamResult(myOutput));
             doc.getDocumentElement().normalize();
             System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
             NodeList nList = doc.getElementsByTagName("temperature");
@@ -97,12 +87,6 @@ public class TemperatureController extends HttpServlet {
                     System.out.println("value : " + eElement.getElementsByTagName("value").item(i).getTextContent());
                     tempSet.add(eElement.getElementsByTagName("value").item(i).getTextContent());
                 }
-//                System.out.println("Array of the tempSet is : " + tempSet.toArray());
-//                Iterator<String> itr = tempSet.iterator();
-//                while (itr.hasNext()) {
-//                    String s = itr.next();
-//                    System.out.println("s: " + s);
-//                                    }
                 System.out.println("The maximum temperature is : " + tempSet.last());
             }
         } catch (Exception ex) {
